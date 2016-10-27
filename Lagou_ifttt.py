@@ -6,7 +6,7 @@ import requests
 import os
 
 API_KEY = ''
-
+EVENT = ''
 
 def getjson(query_params, first=True, pn=1):
     url = "http://www.lagou.com/jobs/positionAjax.json?px=default"\
@@ -59,7 +59,7 @@ def temp_txt(rows):
 
 
 def ifttt_trigger(value1=None, value2=None, value3=None):
-    URL = 'https://maker.ifttt.com/trigger/{event}/with/key/{key}'.format(event='send', key=API_KEY)
+    URL = 'https://maker.ifttt.com/trigger/{event}/with/key/{key}'.format(event=EVENT, key=API_KEY)
     DATA = {'value1': value1, 'value2': value2, 'value3': value3}
     res = requests.post(url=URL, data=DATA)
     print res.status_code
