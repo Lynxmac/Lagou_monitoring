@@ -38,7 +38,7 @@ def New_job(comp):
     '''
     if not os.path.isfile('temp.txt'):
         temp_txt(comp)
-        return comp
+        return
     reader = open('temp.txt', 'rb')
     lines = ''.join(reader.readlines())
     ret = []
